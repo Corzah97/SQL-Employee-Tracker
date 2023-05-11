@@ -1,10 +1,12 @@
 
 const connection = require('../db/connection')
 const inquirer = require('inquirer');
+const askQuestions = require('../index')
 
 function viewEmployee() {
     connection.query('SELECT * FROM employee;', function (err, results, fields) {
         console.table(results);
+        askQuestions.askQuestions();
     });
 }
 
@@ -51,6 +53,7 @@ function addEmployee() {
                     if (err) console.log(err);
                     connection.query('SELECT * FROM employee;', function (err, results, fields) {
                         console.table(results);
+                        askQuestions.askQuestions();
                     });
                 });
             })
@@ -102,6 +105,7 @@ function updateEmployee() {
                     console.log(`Employee ${res.employee} has been updated.`);
                     connection.query('SELECT * FROM employee;', function (err, results, fields) {
                         console.table(results);
+                        askQuestions.askQuestions();
                     });
                 });
             });
@@ -129,6 +133,7 @@ function deleteEmployee() {
                 console.log(`Employee ${res.employee} has been deleted.`);
                 connection.query('SELECT * FROM employee;', function (err, results, fields) {
                     console.table(results);
+                    askQuestions.askQuestions();
                 });
             });
         });

@@ -1,11 +1,11 @@
 const connection = require('../db/connection')
 const { prompt } = require('inquirer')
-const { askQuestions } = require('../index')
+const askQuestions = require('../index')
 
 function viewAllDepartments() {
    connection.query('SELECT * FROM department;', function (err, results, fields) {
       console.table(results);
-      askQuestions();
+      askQuestions.askQuestions();
    });
 }
 
@@ -17,7 +17,7 @@ function addDepartment() {
       connection.query('INSERT INTO department SET name = ?;', res.name, function (err, results, fields) {
          connection.query('SELECT * FROM department;', function (err, results, fields) {
             console.table(results);
-            askQuestions();
+            askQuestions.askQuestions();
          });
       })
    })

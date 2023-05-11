@@ -33,7 +33,12 @@
  Download the application and run:
 
  ```
- npm i
+ npm init -y
+ npm i express
+ npm i inquirer@8.2.4
+ npm i console.table
+ npm i npm install --save mysql2
+
  ```
 
  ## Useage

@@ -32,36 +32,33 @@ const questions = [
 ];
 
 // TODO: Create a function to initialize app
-// function init() {
-  function askQuestions() {
-    inquirer.prompt(questions).then((answers) => {
-      if (answers.action === "view all departments") {
-        viewAllDepartments();
-      } else if (answers.action === "add a department") {
-        addDepartment();
-      } else if (answers.action === "view all roles") {
-        viewAllRoles();
-      } else if (answers.action === "add a role") {
-        addRole();
-      } else if (answers.action === "view all employees") {
-        viewEmployee();
-      } else if (answers.action === "add an employee") {
-        addEmployee();
-      } else if (answers.action === "update an employee role") {
-        updateEmployee();
-      } else if (answers.action === "delete an employee") {
-        deleteEmployee();
-      }
-      // askQuestions();
-    // }).then(() => {askQuestions();});
-    });
-  };
-  // function to call the questions
-  // askQuestions();
-// }
 
-module.exports = { askQuestions, viewAllDepartments, addDepartment };
+function askQuestions() {
+  inquirer.prompt(questions).then((answers) => {
+    if (answers.action === "view all departments") {
+      viewAllDepartments();
+    } else if (answers.action === "add a department") {
+      addDepartment();
+    } else if (answers.action === "view all roles") {
+      viewAllRoles();
+    } else if (answers.action === "add a role") {
+      addRole();
+    } else if (answers.action === "view all employees") {
+      viewEmployee();
+    } else if (answers.action === "add an employee") {
+      addEmployee();
+    } else if (answers.action === "update an employee role") {
+      updateEmployee();
+    } else if (answers.action === "delete an employee") {
+      deleteEmployee();
+    }
+  });
+};
+// function to call the questions
 
+
+
+exports.askQuestions = askQuestions;
 // Function call to initialize app
-// init();
+
 askQuestions()
