@@ -7,7 +7,7 @@ const connection = mysql.createConnection(
         // MySQL username,
         user: 'root',
         // MySQL password
-        password: 'qqy#QGYJCMPueVETRv9V',
+        password: 'Bloodline_160897',
         database: 'employee_tracker_db'
     }
 );

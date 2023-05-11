@@ -32,7 +32,7 @@ const questions = [
 ];
 
 // TODO: Create a function to initialize app
-function init() {
+// function init() {
   function askQuestions() {
     inquirer.prompt(questions).then((answers) => {
       if (answers.action === "view all departments") {
@@ -52,14 +52,16 @@ function init() {
       } else if (answers.action === "delete an employee") {
         deleteEmployee();
       }
+      // askQuestions();
+    // }).then(() => {askQuestions();});
     });
-  }
+  };
   // function to call the questions
-  askQuestions();
-}
+  // askQuestions();
+// }
 
-module.exports = { init, viewAllDepartments, addDepartment };
+module.exports = { askQuestions, viewAllDepartments, addDepartment };
 
 // Function call to initialize app
-init();
-
+// init();
+askQuestions()
